@@ -23,6 +23,7 @@ subprojects {
 
     tasks.named('patchPluginXml') {
         sinceBuild = project.property('ideaSinceVersion')
+        pluginId = "thrift-syntax-fork"
     }
 
     test {

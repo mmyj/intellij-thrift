@@ -1,13 +1,19 @@
 <idea-plugin>
   <id>com.intellij.plugins.thrift</id>
-  <name>Thrift Support</name>
-  <description>Support for Thrift language</description>
+  <name>Thrift Support (fork)</name>
+  <description><![CDATA[
+    Support for Thrift language.
+    <p>
+    This is the fork of <a href="https://plugins.jetbrains.com/plugin/7331-thrift-support">original Thrift plugin developed by @fkorotkov</a>.
+    With updated version of the supported IDEA.
+    ]]>
+  </description>
   <change-notes>
     <![CDATA[
-      IntelliJ 2022.1 Support
+      IntelliJ 2022.2 Support
     ]]>
   </change-notes>
-  <vendor>@fedor</vendor>
+  <vendor>@arhont375</vendor>
   <idea-version since-build="212.4746.92"/><!-- Will be patched by the patchPluginXml task -->
 
   <depends>com.intellij.modules.platform</depends>
