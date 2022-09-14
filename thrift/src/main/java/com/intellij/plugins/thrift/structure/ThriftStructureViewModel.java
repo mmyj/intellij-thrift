@@ -15,7 +15,7 @@
  */
 package com.intellij.plugins.thrift.structure;
 
-import com.intellij.ide.IdeBundle;
+import com.intellij.ide.structureView.StructureViewBundle;
 import com.intellij.ide.structureView.StructureViewModel;
 import com.intellij.ide.structureView.StructureViewModelBase;
 import com.intellij.ide.structureView.StructureViewTreeElement;
@@ -79,7 +79,7 @@ public class ThriftStructureViewModel extends StructureViewModelBase implements 
     @NotNull
     public ActionPresentation getPresentation() {
       return new ActionPresentationData(
-        IdeBundle.message("action.structureview.show.fields"),
+        StructureViewBundle.message("action.structureview.show.fields"),
         null,
         PlatformIcons.FIELD_ICON
       );

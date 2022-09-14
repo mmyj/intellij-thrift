@@ -8,6 +8,7 @@ import com.intellij.plugins.thrift.lang.psi.ThriftFile;
 import com.intellij.plugins.thrift.lang.psi.ThriftStruct;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFileFactory;
+import com.intellij.psi.PsiParserFacade;
 import com.intellij.psi.impl.PsiParserFacadeImpl;
 import com.intellij.psi.util.PsiTreeUtil;
 import org.jetbrains.annotations.NotNull;
@@ -44,6 +45,6 @@ public class ThriftElementFactory {
 
   @NotNull
   public static PsiElement createNewLine(@NotNull Project project) {
-    return PsiParserFacadeImpl.SERVICE.getInstance(project).createWhiteSpaceFromText("\n");
+    return PsiParserFacade.getInstance(project).createWhiteSpaceFromText("\n");
   }
 }

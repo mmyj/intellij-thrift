@@ -21,6 +21,7 @@ import org.jetbrains.jps.model.module.JpsModule;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -156,7 +157,7 @@ public class ThriftBuilder extends ModuleLevelBuilder {
         .start();
 
 
-      BaseOSProcessHandler handler = new BaseOSProcessHandler(process, StringUtil.join(cmdLine, " "), CharsetToolkit.UTF8_CHARSET);
+      BaseOSProcessHandler handler = new BaseOSProcessHandler(process, StringUtil.join(cmdLine, " "), StandardCharsets.UTF_8);
 
       final AtomicBoolean hasErrors = new AtomicBoolean();
       handler.addProcessListener(new ThriftOutputConsumer(source.getAbsolutePath(), context, hasErrors, module, dir));

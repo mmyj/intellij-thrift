@@ -1,5 +1,6 @@
 package com.intellij.plugins.thrift.editor;
 
+import com.intellij.codeInsight.CodeInsightBundle;
 import com.intellij.codeInsight.daemon.DaemonBundle;
 import com.intellij.codeInsight.daemon.LineMarkerInfo;
 import com.intellij.codeInsight.daemon.LineMarkerProvider;
@@ -7,6 +8,7 @@ import com.intellij.codeInsight.daemon.impl.PsiElementListNavigator;
 import com.intellij.icons.AllIcons;
 import com.intellij.ide.util.DefaultPsiElementCellRenderer;
 import com.intellij.openapi.editor.markup.GutterIconRenderer;
+import com.intellij.plugins.thrift.ThriftBundle;
 import com.intellij.plugins.thrift.lang.psi.ThriftDefinitionName;
 import com.intellij.plugins.thrift.util.ThriftPsiUtil;
 import com.intellij.psi.NavigatablePsiElement;
@@ -39,7 +41,7 @@ public class ThriftLineMarkerProvider implements LineMarkerProvider {
       definitionName,
       definitionName.getTextRange(),
       AllIcons.Gutter.ImplementedMethod,
-      element -> DaemonBundle.message("interface.is.implemented.too.many"),
+      element -> ThriftBundle.message("thrift.inspection.interface.implemented.too.many"),
         (e, elt) -> PsiElementListNavigator.openTargets(
           e,
           implementations.toArray(new NavigatablePsiElement[0]),
@@ -47,8 +49,8 @@ public class ThriftLineMarkerProvider implements LineMarkerProvider {
           "Implementations of " + definitionName.getText(),
           new DefaultPsiElementCellRenderer()
         ),
-      GutterIconRenderer.Alignment.RIGHT,
-      () -> DaemonBundle.message("interface.is.implemented.too.many")
+        GutterIconRenderer.Alignment.RIGHT,
+        () -> ThriftBundle.message("thrift.inspection.interface.implemented.too.many")
     );
   }
 }
