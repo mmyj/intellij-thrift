@@ -1,5 +1,6 @@
 package com.intellij.plugins.thrift.lang;
 
+import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.project.Project;
 import com.intellij.plugins.thrift.ThriftLanguage;
 import com.intellij.plugins.thrift.lang.psi.ThriftCustomType;
@@ -45,6 +46,6 @@ public class ThriftElementFactory {
 
   @NotNull
   public static PsiElement createNewLine(@NotNull Project project) {
-    return PsiParserFacade.getInstance(project).createWhiteSpaceFromText("\n");
+    return project.getService(PsiParserFacade.class).createWhiteSpaceFromText("\n");
   }
 }
