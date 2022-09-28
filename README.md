@@ -1,9 +1,17 @@
-[![Build Status](https://api.cirrus-ci.com/github/fkorotkov/intellij-thrift.svg)](https://cirrus-ci.com/github/fkorotkov/intellij-thrift)
+# Thrift Support (fork)
 
 Plugin to support Thrift language in IntelliJ
 
-How to build
-===============
+## Why fork?
+
+This is the fork of [original plugin](https://github.com/fkorotkov/intellij-thrift) developed by @fkorotkov, that 
+was forked for publishing and few fixes as I'm using original plugin for development in different places, 
+but unfortunately it wasn't receiving compatibility updates recently.
+
+There is no guarantee for current fork to stay long, it's possible that it would be discontinued at the moment
+when development for original plugin would become active again.
+
+## How to build
 
 [JDK 11 or later](https://adoptium.net/) is required to build from source.
 
@@ -11,8 +19,7 @@ How to build
 ./gradlew :thrift:buildPlugin
 ```
 
-How to run locally with new changes
-===============
+## How to run locally with new changes
 
 ```bash
 ./gradlew :thrift:runIde
