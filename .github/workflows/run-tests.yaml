@@ -1,6 +1,6 @@
 name: Run tests with Gradle
 
-on:
+on:  
   push:
 
 permissions:
@@ -23,7 +23,7 @@ jobs:
   publish:
     needs:
       - test
-    if: ${{ github.event_name == "tag" }}
+    if: ${{ github.event_name == 'tag' }}
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
@@ -36,3 +36,5 @@ jobs:
         uses: gradle/gradle-build-action@v2
       - name: Publish plugin
         run: ./gradlew :thrift:publishPlugin
+        env:
+          JETBRAINS_TOKEN: ${{ secrets.JETBRAINS_TOKEN }}        
