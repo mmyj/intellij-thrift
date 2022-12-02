@@ -13,7 +13,7 @@ when development for original plugin would become active again.
 
 ## How to build
 
-[JDK 11 or later](https://adoptium.net/) is required to build from source.
+[JDK 17 or later](https://adoptium.net/) is required to build from source.
 
 ```bash
 ./gradlew :thrift:buildPlugin
@@ -24,3 +24,8 @@ when development for original plugin would become active again.
 ```bash
 ./gradlew :thrift:runIde
 ```
+
+## Development
+
+ - Thrift grammar generated from the [BNF grammar](./thrift/src/main/grammar/Thrift.bnf) using
+the [Grammar-Kit](https://github.com/JetBrains/Grammar-Kit) IDEA plugin.
